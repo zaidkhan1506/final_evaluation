@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <script src="style.css"></script>
+</head>
+
+<div class="container">
+    <div class="header"></div>
+    <div class="input_field">
+        <label for="Id">Id</label>
+        <input type="number" id="empId">
+
+        <label for="empName">Name</label>
+        <input type="text" id="empName">
+
+        <label for="age">Age</label>
+        <input type="number" id="age">
+        <p id="ageErrorLabel"></p>
+
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+            <option  value="none">select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Female</option>
+        </select>
+        <p id="genderErrorLabel"></p>
+
+
+        <label for="designation">Designation</label>
+        <select name="Designation" id="designation">
+            <option value="none">select</option>
+            <option value="seniorDeveloper">Senior Developer</option>
+            <option value="juniorDeveloper">Junior Developer</option>
+            <option value="manager">Manager</option>
+            <option value="fresher">Fresher</option>
+        </select>
+        <p id="designationErrorLabel"></p>
+
+        <label for="selfPhoto">Self photo</label>
+        <input type="text" id="selfPhoto">
+        <p id="selfPhotoErrorLabel"></p>
+
+        <input type="button" value="click" onclick="Validate()">
+    </div>
+    <div class="table"></div>
+</div>
+<script src="script.js"></script>
+
+</html>
