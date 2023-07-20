@@ -4,47 +4,72 @@
     <script src="style.css"></script>
 </head>
 
-<div class="container">
-    <div class="header"></div>
-    <div class="input_field">
-        <label for="Id">Id</label>
-        <input type="number" id="empId">
+<body>
 
-        <label for="empName">Name</label>
-        <input type="text" id="empName">
 
-        <label for="age">Age</label>
-        <input type="number" id="age">
-        <p id="ageErrorLabel"></p>
+    <div class="container">
+        <div class="header"></div>
+        <div class="input_field">
+            <label for="Id">Id</label>
+            <input type="number" id="empId">
+            <p id="empNameErrorLabel"></p>
 
-        <label for="gender">Gender</label>
-        <select name="gender" id="gender">
+            <label for="empName">Name</label>
+            <input type="text" id="empName">
+            <p id="empNameErrorLabel"></p>
+
+            <label for="age">Age</label>
+            <input type="number" id="age">
+            <p id="ageErrorLabel"></p>
+
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender">
             <option  value="none">select</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Others">Female</option>
         </select>
-        <p id="genderErrorLabel"></p>
+            <p id="genderErrorLabel"></p>
 
 
-        <label for="designation">Designation</label>
-        <select name="Designation" id="designation">
+            <label for="designation">Designation</label>
+            <select name="Designation" id="designation">
             <option value="none">select</option>
             <option value="seniorDeveloper">Senior Developer</option>
             <option value="juniorDeveloper">Junior Developer</option>
             <option value="manager">Manager</option>
             <option value="fresher">Fresher</option>
         </select>
-        <p id="designationErrorLabel"></p>
+            <p id="designationErrorLabel"></p>
 
-        <label for="selfPhoto">Self photo</label>
-        <input type="text" id="selfPhoto">
-        <p id="selfPhotoErrorLabel"></p>
+            <label for="selfPhoto">Self photo</label>
+            <input type="text" id="selfPhoto">
+            <p id="selfPhotoErrorLabel"></p>
 
+
+        </div>
+        <div class="table-div">
+            <table class="table">
+                <thead class="thead-primary">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Designation</th>
+                        <th>Photo url</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="details"></tbody>
+            </table>
+
+
+        </div>
         <input type="button" value="click" onclick="Validate()">
     </div>
-    <div class="table"></div>
-</div>
-<script src="script.js"></script>
+</body>
+<script src="java-script/validation.js"></script>
+<script src="java-script/data.js"></script>
 
 </html>

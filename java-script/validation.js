@@ -1,4 +1,5 @@
 let empId = document.getElementById("empId")
+let empIdErrorLabel = document.getElementById("empNameErrorLabel")
 let empName = document.getElementById("empName")
 let age = document.getElementById("age")
 let ageErrorLabel = document.getElementById("ageErrorLabel")
@@ -8,10 +9,19 @@ let designation = document.getElementById("designation")
 let designationErrorLabel = document.getElementById("designationErrorLabel")
 let selfphoto = document.getElementById("selfPhoto")
 let selfPhotoErrorLabel = document.getElementById("selfPhotoErrorLabel")
+let empNameErrorLabel = document.getElementById("empNameErrorLabel")
+var usedId = []
 
 function Validate() {
     let flag = 0;
-
+    let stop = 0;
+    if (empName.value == "") {
+        empNameErrorLabel.innerHTML = "enter name"
+        flag--
+    } else {
+        empNameErrorLabel.innerHTML = ""
+        flag++
+    }
     if (age.value <= 18 || age.value >= 59) {
         ageErrorLabel.innerHTML = "employee cant be below 18 and above 59"
         flag--
@@ -40,7 +50,21 @@ function Validate() {
         selfPhotoErrorLabel.innerHTML = ""
         flag++
     }
-    if (flag == 4) {
-        window.location.href = "red.html";
+    for (i = 0; i <= usedId.length; i++) {
+        if (usedId[i] == empId.value) {
+            empIdErrorLabel.innerHTML = "Id already used"
+            flag--
+            stop = 1
+        }
+    }
+    if (stop == 0) {
+        empIdErrorLabel.innerHTML = ""
+        flag++
+        usedId.push(empId.value)
+
+    }
+
+    if (flag == 6) {
+        data();
     }
 }
